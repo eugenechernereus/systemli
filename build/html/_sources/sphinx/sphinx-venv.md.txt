@@ -1,0 +1,145 @@
+## Установка Sphinx на Linux Mint через виртуальное окружение venv
+
+**1.  Установка зависимостей**
+
+В терминале:
+
+```bash
+sudo apt update
+sudo apt install python3-pip python3-venv
+```
+
+Создаём виртуальное окружение:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+**2. Установка Sphinx + расширений**
+
+```bash
+pip install sphinx furo myst-parser
+```
+
+Проверка:
+
+```bash
+sphinx-build --version
+```
+
+**3. Создание проекта**
+
+```bash
+sphinx-quickstart
+```
+
+Минимальные ответы:
+
+```text
+Separate source and build directories (y/n) [n]: n
+Project name: MyDocs
+Author name: You
+Project release []: 0.1
+```
+
+Структура получится примерно такая:
+
+```text
+docs/
+ ├── conf.py
+ ├── index.rst
+ └── Makefile
+```
+
+**4. Минимальный `conf.py`**
+
+Открой `conf.py` и сделай самый простой конфиг:
+
+```Python
+project = "MyDocs"
+author = "You"
+release = "0.1"
+
+extensions = [
+    "myst_parser",
+]
+
+html_theme = "furo"
+
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".md": "markdown",
+}
+```
+
+**5. Пример Markdown страницы**
+
+Создай файл:
+
+`intro.md`
+
+```markdown
+# Hello
+
+Это страница Markdown.
+
+- пункт 1
+- пункт 2
+```
+
+**6. Добавь её в `index.rst`**
+
+```rst
+Welcome
+=======
+
+.. toctree::
+   :maxdepth: 2
+
+   intro
+```
+
+**7. Сборка**
+
+```bash
+make html
+```
+
+Результат:
+
+```text
+_build/html/index.html
+```
+
+Открыть:
+
+```bash
+xdg-open _build/html/index.html
+```
+
+**Минимальный requirements.txt:**
+
+```text
+sphinx
+furo
+myst-parser
+```
+
+**Оптимальный (добавить в `conf.py`):**
+
+```text
+sphinx
+sphinx-rtd-theme
+myst-parser
+sphinx-autobuild
+sphinx-copybutton
+sphinx-design
+sphinxcontrib-mermaid
+```
+
+Установка потом одной командой:
+
+```text
+pip install -r requirements.txt
+```
