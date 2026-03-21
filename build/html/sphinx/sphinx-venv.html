@@ -24,6 +24,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Установка Sphinx на Linux Mint через Docker" href="sphinx-docker.html" />
     <link rel="prev" title="sphinx" href="index.html" /> 
 </head>
 
@@ -49,7 +50,25 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">sphinx</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Установка Sphinx на Linux Mint через виртуальное окружение venv</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Установка Sphinx на Linux Mint через виртуальное окружение venv</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.  Установка зависимостей</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx">2. Установка Sphinx + расширений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3. Создание проекта</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conf-py">4. Минимальный <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#markdown">5. Пример Markdown страницы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#index-rst">6. Добавь её в <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">7. Сборка</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requirements-txt">Минимальный requirements.txt:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Оптимальный (добавить в <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html">Установка Sphinx на Linux Mint через Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#api">Как включить автогенерацию API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#mermaid">Диаграммы Mermaid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#c4-model">C4 Model (профессиональный стандарт)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id18">Полезные значки</a></li>
 </ul>
 </li>
 </ul>
@@ -81,7 +100,9 @@
              
   <section id="sphinx-linux-mint-venv">
 <h1>Установка Sphinx на Linux Mint через виртуальное окружение venv<a class="headerlink" href="#sphinx-linux-mint-venv" title="Link to this heading"></a></h1>
-<p><strong>1.  Установка зависимостей</strong></p>
+<hr class="docutils" />
+<section id="id1">
+<h2>1.  Установка зависимостей<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <p>В терминале:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv
@@ -92,7 +113,10 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </pre></div>
 </div>
-<p><strong>2. Установка Sphinx + расширений</strong></p>
+</section>
+<hr class="docutils" />
+<section id="sphinx">
+<h2>2. Установка Sphinx + расширений<a class="headerlink" href="#sphinx" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>furo<span class="w"> </span>myst-parser
 </pre></div>
 </div>
@@ -100,7 +124,10 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build<span class="w"> </span>--version
 </pre></div>
 </div>
-<p><strong>3. Создание проекта</strong></p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h2>3. Создание проекта<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-quickstart
 </pre></div>
 </div>
@@ -118,7 +145,10 @@ Project release []: 0.1
  └── Makefile
 </pre></div>
 </div>
-<p><strong>4. Минимальный <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></strong></p>
+</section>
+<hr class="docutils" />
+<section id="conf-py">
+<h2>4. Минимальный <code class="docutils literal notranslate"><span class="pre">conf.py</span></code><a class="headerlink" href="#conf-py" title="Link to this heading"></a></h2>
 <p>Открой <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> и сделай самый простой конфиг:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="s2">&quot;MyDocs&quot;</span>
 <span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;You&quot;</span>
@@ -136,7 +166,10 @@ Project release []: 0.1
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>5. Пример Markdown страницы</strong></p>
+</section>
+<hr class="docutils" />
+<section id="markdown">
+<h2>5. Пример Markdown страницы<a class="headerlink" href="#markdown" title="Link to this heading"></a></h2>
 <p>Создай файл:</p>
 <p><code class="docutils literal notranslate"><span class="pre">intro.md</span></code></p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Hello</span>
@@ -147,7 +180,10 @@ Project release []: 0.1
 <span class="k">-</span><span class="w"> </span>пункт 2
 </pre></div>
 </div>
-<p><strong>6. Добавь её в <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></strong></p>
+</section>
+<hr class="docutils" />
+<section id="index-rst">
+<h2>6. Добавь её в <code class="docutils literal notranslate"><span class="pre">index.rst</span></code><a class="headerlink" href="#index-rst" title="Link to this heading"></a></h2>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Welcome</span>
 <span class="gh">=======</span>
 
@@ -157,7 +193,10 @@ Project release []: 0.1
    intro
 </pre></div>
 </div>
-<p><strong>7. Сборка</strong></p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>7. Сборка<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
 </pre></div>
 </div>
@@ -169,13 +208,17 @@ Project release []: 0.1
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xdg-open<span class="w"> </span>_build/html/index.html
 </pre></div>
 </div>
-<p><strong>Минимальный requirements.txt:</strong></p>
+<hr class="docutils" />
+<section id="requirements-txt">
+<h3>Минимальный requirements.txt:<a class="headerlink" href="#requirements-txt" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sphinx
 furo
 myst-parser
 </pre></div>
 </div>
-<p><strong>Оптимальный (добавить в <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>):</strong></p>
+</section>
+<section id="id4">
+<h3>Оптимальный (добавить в <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>):<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sphinx
 sphinx-rtd-theme
 myst-parser
@@ -190,12 +233,15 @@ sphinxcontrib-mermaid
 </pre></div>
 </div>
 </section>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="sphinx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sphinx-docker.html" class="btn btn-neutral float-right" title="Установка Sphinx на Linux Mint через Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

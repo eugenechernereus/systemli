@@ -51,6 +51,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">sphinx</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html">Установка Sphinx на Linux Mint через виртуальное окружение venv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html">Установка Sphinx на Linux Mint через Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#api">Как включить автогенерацию API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#mermaid">Диаграммы Mermaid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#c4-model">C4 Model (профессиональный стандарт)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id18">Полезные значки</a></li>
 </ul>
 </li>
 </ul>
@@ -84,7 +89,54 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-venv.html">Установка Sphinx на Linux Mint через виртуальное окружение venv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-venv.html">Установка Sphinx на Linux Mint через виртуальное окружение venv</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html#id1">1.  Установка зависимостей</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html#sphinx">2. Установка Sphinx + расширений</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html#id2">3. Создание проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html#conf-py">4. Минимальный <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html#markdown">5. Пример Markdown страницы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html#index-rst">6. Добавь её в <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html#id3">7. Сборка</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html">Установка Sphinx на Linux Mint через Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id1">1. Создаем папку проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#dockerfile-sphinx">2. Dockerfile для Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#m-requirements-txt">3. Mинимальный requirements.txt:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#docker-compose-yml">4. docker-compose.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#conf-py">5. настройка файла conf.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#sphinx">6. Инициализация проекта Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id3">7. Запуск контейнера и автосборка:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id4">Итог</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html#api">Как включить автогенерацию API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id5">1. Добавить расширения и путь к коду в <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id6">2. Создать страницу API:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id7">3. Автоматическая генерация всех модулей:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html#mermaid">Диаграммы Mermaid</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#md">В .md файле:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id11">Пример диаграммы архитектуры</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#sequence">Sequence диаграммы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#flowchart">Flowchart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id12">Mermaid поддерживает:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id13">Архитектура</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id14">Что показывают архитектурные диаграммы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id15">Более сложный пример (микросервисы)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html#c4-model">C4 Model (профессиональный стандарт)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#context-diagram">1. Context diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#container-diagram">2. Container diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#component-diagram">3. Component diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html#id18">Полезные значки</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id19">Примеры использования</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

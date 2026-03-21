@@ -7,3 +7,4 @@ sphinx
    :caption: Contents:
 
    sphinx-venv
+   sphinx-docker

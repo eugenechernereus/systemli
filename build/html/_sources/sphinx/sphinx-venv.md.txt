@@ -1,6 +1,7 @@
 ## Установка Sphinx на Linux Mint через виртуальное окружение venv
 
-**1.  Установка зависимостей**
+* * *
+### 1.  Установка зависимостей
 
 В терминале:
 
@@ -16,7 +17,8 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-**2. Установка Sphinx + расширений**
+* * *
+### 2. Установка Sphinx + расширений
 
 ```bash
 pip install sphinx furo myst-parser
@@ -28,7 +30,8 @@ pip install sphinx furo myst-parser
 sphinx-build --version
 ```
 
-**3. Создание проекта**
+* * *
+### 3. Создание проекта
 
 ```bash
 sphinx-quickstart
@@ -52,7 +55,8 @@ docs/
  └── Makefile
 ```
 
-**4. Минимальный `conf.py`**
+* * *
+### 4. Минимальный `conf.py`
 
 Открой `conf.py` и сделай самый простой конфиг:
 
@@ -73,7 +77,8 @@ source_suffix = {
 }
 ```
 
-**5. Пример Markdown страницы**
+* * *
+### 5. Пример Markdown страницы
 
 Создай файл:
 
@@ -88,7 +93,8 @@ source_suffix = {
 - пункт 2
 ```
 
-**6. Добавь её в `index.rst`**
+* * *
+### 6. Добавь её в `index.rst`
 
 ```rst
 Welcome
@@ -100,7 +106,8 @@ Welcome
    intro
 ```
 
-**7. Сборка**
+* * *
+### 7. Сборка
 
 ```bash
 make html
@@ -118,7 +125,8 @@ _build/html/index.html
 xdg-open _build/html/index.html
 ```
 
-**Минимальный requirements.txt:**
+* * *
+#### Минимальный requirements.txt:
 
 ```text
 sphinx
@@ -126,7 +134,7 @@ furo
 myst-parser
 ```
 
-**Оптимальный (добавить в `conf.py`):**
+#### Оптимальный (добавить в `conf.py`):
 
 ```text
 sphinx
