@@ -8,3 +8,6 @@ sphinx
 
    sphinx-venv
    sphinx-docker
+   sphinx-mermaid
+   sphinx-github
+   sphinx-autodoc-api

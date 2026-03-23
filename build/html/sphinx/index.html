@@ -52,10 +52,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">sphinx</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sphinx-venv.html">Установка Sphinx на Linux Mint через виртуальное окружение venv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html">Установка Sphinx на Linux Mint через Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#api">Как включить автогенерацию API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#mermaid">Диаграммы Mermaid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#c4-model">C4 Model (профессиональный стандарт)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id18">Полезные значки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html">Диаграммы Mermaid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#c4-model">C4 Model (профессиональный стандарт)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#id8">Полезные значки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html">GitHub - автоматическая сборка Sphinx и публикация сайта через GitHub Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#ssh-github">SSH для GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-autodoc-api.html">Как включить автогенерацию API</a></li>
 </ul>
 </li>
 </ul>
@@ -108,33 +110,49 @@
 <li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#sphinx">6. Инициализация проекта Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id3">7. Запуск контейнера и автосборка:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id4">Итог</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id5">Полезные команды</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html#api">Как включить автогенерацию API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id5">1. Добавить расширения и путь к коду в <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id6">2. Создать страницу API:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id7">3. Автоматическая генерация всех модулей:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-mermaid.html">Диаграммы Mermaid</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#html">Для совместимости всех платформ рекомендуется HTML код</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#sphinx">Для правильного отображения диаграмм в Sphinx название пишется в {}:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#id5">Более сложный пример (микросервисы)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html#mermaid">Диаграммы Mermaid</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#md">В .md файле:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id11">Пример диаграммы архитектуры</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#sequence">Sequence диаграммы</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#flowchart">Flowchart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id12">Mermaid поддерживает:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id13">Архитектура</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id14">Что показывают архитектурные диаграммы</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id15">Более сложный пример (микросервисы)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-mermaid.html#c4-model">C4 Model (профессиональный стандарт)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#context-diagram">1. Context diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#container-diagram">2. Container diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#component-diagram">3. Component diagram</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html#c4-model">C4 Model (профессиональный стандарт)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#context-diagram">1. Context diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#container-diagram">2. Container diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#component-diagram">3. Component diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-mermaid.html#id8">Полезные значки</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-mermaid.html#id9">Примеры использования</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-docker.html#id18">Полезные значки</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx-docker.html#id19">Примеры использования</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-github.html">GitHub - автоматическая сборка Sphinx и публикация сайта через GitHub Pages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#id1">Используется:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#github">1. Создать репозиторий на GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#id2">2. Подключить локальный проект</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#github-actions">3. Создать GitHub Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#github-pages">4. Включить GitHub Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#commit">5. Сделать commit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-github.html#ssh-github">SSH для GitHub</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#id3">1. Проверка существующих ключей</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#ssh">2. Создание нового SSH-ключа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#id4">3. Добавление ключа в SSH-агент</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#id5">4. Копируем публичный ключ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#id6">5. Добавляем ключ в GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#url-ssh">6. Меняем URL репозитория на SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#id7">7. Проверка соединения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-github.html#id8">8. Теперь пушим без пароля</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-autodoc-api.html">Как включить автогенерацию API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-autodoc-api.html#conf-py">1. Добавить расширения и путь к коду в <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-autodoc-api.html#id1">2. Создать страницу API:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-autodoc-api.html#id2">3. Автоматическая генерация всех модулей:</a></li>
 </ul>
 </li>
 </ul>

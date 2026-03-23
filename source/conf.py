@@ -17,11 +17,11 @@ release = '1.0'
 extensions = [
     "myst_parser",
     "sphinx.ext.mathjax",
-    "sphinx_autobuild",
     "sphinx_copybutton",
     "sphinx_design",
     "sphinxcontrib.mermaid",
 ]
+
 
 templates_path = ['_templates']
 exclude_patterns = []
