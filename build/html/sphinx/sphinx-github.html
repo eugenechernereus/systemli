@@ -78,6 +78,14 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#email">Email манипуляции</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Добавить новый email и сделать его основным</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-git">Обновить email в настройках Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-github">Скрыть свой email в коммитах GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git">Настроить Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Как скрыть свой email в старых коммитах</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx-autodoc-api.html">Как включить автогенерацию API</a></li>
 </ul>
 </li>
@@ -137,12 +145,33 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/USERNAME/name-repository.git
 </pre></div>
 </div>
-<p><strong>Отправляем:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">M</span> <span class="n">main</span>
-<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
+<p><strong>Поменять репозиторий:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://github.com/NEW-USERNAME/NEW-REPO.git
 </pre></div>
 </div>
-<p>-M - переименование главной ветки</p>
+<p><strong>Добавить новый и оставить старый:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>new-origin<span class="w"> </span>https://github.com/NEW-USERNAME/NEW-REPO.git
+</pre></div>
+</div>
+<p><strong>Пушить новый:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>new-origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p><strong>Удалить старый:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
+</pre></div>
+</div>
+<p><strong>И добавить заново:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://
+</pre></div>
+</div>
+<p><strong>Отправляем:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>-M - переименование главной ветки
+-u - запомнить ветку</p>
 </section>
 <section id="github-actions">
 <h2>3. Создать GitHub Actions<a class="headerlink" href="#github-actions" title="Link to this heading"></a></h2>
@@ -291,7 +320,44 @@ git<span class="w"> </span>push
 ssh-add<span class="w"> </span>~/.ssh/id_ed25519
 </pre></div>
 </div>
+<hr class="docutils" />
 </section>
+</section>
+</section>
+<section id="email">
+<h1>Email манипуляции<a class="headerlink" href="#email" title="Link to this heading"></a></h1>
+<section id="id9">
+<h2>Добавить новый email и сделать его основным<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>Settings -&gt; раздел Emails -&gt; Add email address -&gt; подтверждение письма -&gt; Make primary</p>
+</section>
+<section id="email-git">
+<h2>Обновить email в настройках Git<a class="headerlink" href="#email-git" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;newemail@example.com&quot;</span>
+</pre></div>
+</div>
+<p>Коммиты после этого будут идти с новым email.</p>
+</section>
+<section id="email-github">
+<h2>Скрыть свой email в коммитах GitHub<a class="headerlink" href="#email-github" title="Link to this heading"></a></h2>
+<p>Settings -&gt; “Keep my email addresses private”</p>
+<p>GitHub создаст специальный email вида:</p>
+<p><code class="docutils literal notranslate"><span class="pre">12345678+username&#64;users.noreply.github.com</span></code></p>
+<p>он будет отображаться в коммитах.</p>
+</section>
+<section id="git">
+<h2>Настроить Git<a class="headerlink" href="#git" title="Link to this heading"></a></h2>
+<p>указать этот скрытый email в Git:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&quot;12345678+username&#64;users.noreply.github.com&quot;</span></code></p>
+<p>Проверить:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span></code></p>
+</section>
+<section id="id10">
+<h2>Как скрыть свой email в старых коммитах<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Используй BFG или filter-branch для переписывания истории коммитов.</p></li>
+<li><p>Заменяешь реальный email на скрытый noreply адрес.</p></li>
+<li><p>Запускаешь git push –force для перезаписи истории на удалённом репозитории.</p></li>
+</ol>
 </section>
 </section>
 

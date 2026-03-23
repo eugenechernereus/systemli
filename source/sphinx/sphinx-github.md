@@ -30,14 +30,45 @@ git commit -m "initial sphinx docs"
 git remote add origin https://github.com/USERNAME/name-repository.git
 ```
 
+**Поменять репозиторий:**
+
+```bash
+git remote set-url origin https://github.com/NEW-USERNAME/NEW-REPO.git
+```
+
+**Добавить новый и оставить старый:**
+
+```bash
+git remote add new-origin https://github.com/NEW-USERNAME/NEW-REPO.git
+```
+
+**Пушить новый:**
+
+```bash
+git push new-origin main
+```
+
+**Удалить старый:**
+
+```bash
+git remote remove origin
+```
+
+**И добавить заново:**
+
+```bash
+git remote add origin https://
+```
+
 **Отправляем:**
 
-```
+```bash
 git branch -M main
 git push -u origin main
 ```
 
 -M - переименование главной ветки
+-u - запомнить ветку
 
 ### 3. Создать GitHub Actions
 (Можно сделать на сайте: Settings - Pages)
@@ -196,4 +227,45 @@ git push -u origin main
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ```
+
+* * *
+## Email манипуляции
+
+### Добавить новый email и сделать его основным
+
+Settings -> раздел Emails -> Add email address -> подтверждение письма -> Make primary
+
+### Обновить email в настройках Git
+
+```bash
+git config --global user.email "newemail@example.com"
+```
+
+Коммиты после этого будут идти с новым email.
+
+### Скрыть свой email в коммитах GitHub
+
+Settings -> “Keep my email addresses private”
+
+GitHub создаст специальный email вида:
+
+`12345678+username@users.noreply.github.com`
+
+он будет отображаться в коммитах.
+
+### Настроить Git
+
+указать этот скрытый email в Git:
+
+`git config --global user.email "12345678+username@users.noreply.github.com"`
+
+Проверить:
+
+`git config --global user.email`
+
+### Как скрыть свой email в старых коммитах
+
+1. Используй BFG или filter-branch для переписывания истории коммитов.
+2. Заменяешь реальный email на скрытый noreply адрес.
+3. Запускаешь git push --force для перезаписи истории на удалённом репозитории.
 
